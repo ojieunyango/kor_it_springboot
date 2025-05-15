@@ -1,4 +1,4 @@
-package com.packt.cardatabase2.domain;
+package com.packt.cardatebase.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

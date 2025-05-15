@@ -1,4 +1,5 @@
-package com.packt.cardatabase2.domain;
+package com.packt.cardatebase.domain;
+
 
 import jakarta.persistence.*;
 

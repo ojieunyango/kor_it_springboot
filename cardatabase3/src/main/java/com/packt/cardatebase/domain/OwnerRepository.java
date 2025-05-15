@@ -1,4 +1,4 @@
-package com.packt.cardatabase2.domain;
+package com.packt.cardatebase.domain;
 
 import org.springframework.data.repository.CrudRepository;
 

@@ -1,4 +1,4 @@
-package com.packt.cardatebase.domain;
+package com.packt.cardatabase2.domain;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
