@@ -13,14 +13,17 @@ import java.util.Arrays;
 
 @SpringBootApplication
 public class CardatebaseApplication implements CommandLineRunner {
-	private static final Logger logger = LoggerFactory.getLogger(CardatebaseApplication.class);private final CarRepository repository;
+	private static final Logger logger = LoggerFactory.getLogger(CardatebaseApplication.class);
 
+	private final CarRepository repository;
 	private final OwnerRepository oRepository;
+	private final AppUserRepository uRepository;
 
-	public CardatebaseApplication(CarRepository repository, OwnerRepository oRepository){
+	public CardatebaseApplication(CarRepository repository, OwnerRepository oRepository, AppUserRepository uRepository){
 		this.oRepository=oRepository;
 		this.repository = repository;
-	}
+        this.uRepository = uRepository;
+    }
 
 
 	public static void main(String[] args) {
@@ -44,6 +47,9 @@ public class CardatebaseApplication implements CommandLineRunner {
 		for (Car car : repository.findAll()){
 			logger.info("브랜드: {}, 모델명: {}", car.getBrand(), car.getModel());
 		}
-
+		//사용자명: user, 비밀번호: user
+        uRepository.save(new AppUser("user", "$2y$04$B8v7IZwUuLP431x8MPP3WeQOKxvxX.HEbSGRDVvcZoe4dbB6YXcOi","USER"));
+		//사용자명: admin , 비밀번호 : admin
+		uRepository.save(new AppUser("admin", "$2y$04$hlwh/hR9rMOifv9bhmyetO5NkvFbWfxwgLR0ZRvhcDmXKF4q7r56e", "ADMIN"));
 	}
 }
